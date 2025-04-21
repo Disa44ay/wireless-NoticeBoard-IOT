@@ -3,18 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wireless Noticeboard</title>
+  <title>Matrix Noticeboard</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="matrix-bg"></div>
+  <h1>📡 MATRIX MESSAGE TERMINAL</h1>
 
-  <h1>🖥️ Wireless Noticeboard</h1>
-  <input type="text" id="msgInput" placeholder="Enter your message..." />
-  <button onclick="sendMessage()">Send</button>
+  <form id="alienForm">
+    <div class="cyber-input">
+      <input type="text" id="msgInput" placeholder="Type something fun 🎉" maxlength="50" />
+      <input type="number" id="repeatInput" placeholder="Repeat count" min="1" max="10" value="3" />
+      <button type="submit" class="glow-btn">TRANSMIT ⚡</button>
+    </div>
+  </form>
 
-  <div class="output" id="outputText"></div>
-  <div class="emoji" id="emojiArea">😄</div>
+  <div class="output terminal-text glitch" id="outputText"></div>
+  <div class="emoji" id="emojiArea">🤖</div>
 
+  <button onclick="luckyDice()" class="glow-btn magic-btn">🌌 Cosmic Fate Dice 🎲</button>
+  <div class="terminal-text fortune-output" id="fortuneText"></div>
   <script src="script.js"></script>
 </body>
 </html>

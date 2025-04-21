@@ -1,62 +1,177 @@
+/* Alien Pixelated Bluish-Pink Theme */
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd);
-    background-size: 600% 600%;
-    animation: backgroundShift 15s ease infinite;
-    transition: 0.5s;
-  }
-  
-  @keyframes backgroundShift {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  input {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border: none;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #050016, #1b0044, #390065, #7800a0, #ff77e9);
+    background-size: 500% 500%;
+    animation: alienBgShift 20s ease infinite;
+    color: #ffccff;
+    overflow: hidden;
+    position: relative;
+    image-rendering: pixelated;
+}
+
+@keyframes alienBgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+    0%, 100% { transform: none; }
+    20% { transform: skew(-0.5deg, 0.6deg); }
+    40% { transform: skew(0.5deg, -0.6deg); }
+    60% { transform: translate(1px, -1px); }
+    80% { transform: translate(-1px, 1px); }
+}
+
+h1 {
+    font-size: 2.2rem; /* Larger for more impact */
+    margin-bottom: 30px;
+    color: #ff77e9;
+    text-shadow: 0 0 8px #ff00cc, 0 0 20px #00f0ff, 0 0 30px #ff00cc; /* Enhanced glowing effect */
+    animation: glitch 3s infinite; /* Slow down the glitch for more effect */
+    position: relative;
+    z-index: 1;
+}
+
+/* Cyber Input */
+.cyber-input {
+    position: relative;
+    z-index: 1;
+    border: 3px dashed #ff66cc;
+    padding: 20px;
     border-radius: 10px;
-    width: 300px;
-    max-width: 80%;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    background-color: #6a11cb;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #2575fc;
-  }
-  
-  .output {
+    box-shadow: 0 0 10px #ff66cc, 0 0 25px #66ffff;
+    background: rgba(10, 0, 25, 0.8); /* Slightly darker for more contrast */
+    backdrop-filter: blur(10px); /* Add blur effect for futuristic feel */
+}
+
+input {
+    padding: 15px;
+    font-size: 1.2rem; /* Larger font for readability */
+    width: 320px;
+    background: #110022;
+    border: 2px dotted #ffccff;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #00ffff;
+    outline: none;
+    background: #220033;
+}
+
+/* Glowing Button */
+.glow-btn {
+    background: #1b0033;
+    border: 2px solid #ff66cc;
+    padding: 12px 25px;
+    font-size: 1rem; /* Slightly bigger for better interaction */
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.glow-btn:hover {
+    background: #ff66cc;
+    color: #000;
+    box-shadow: 0 0 15px #00ffff, 0 0 25px #ff66cc;
+    transform: scale(1.08);
+}
+
+/* Output box */
+.output {
+    background: rgba(10, 0, 25, 0.7);
+    border: 2px solid #66ffff;
     margin-top: 30px;
-    font-size: 1.5rem;
+    padding: 15px;
+    font-size: 1.2rem; /* Increase font size for easier reading */
+    color: #fff;
+    animation: glitch 2.5s infinite;
+    position: relative;
+    z-index: 1;
     text-align: center;
-    min-height: 50px;
-  }
-  
-  .emoji {
-    font-size: 2rem;
-    margin-top: 10px;
-  }
-  
+    max-width: 90%;
+}
+
+/* Emoji */
+.emoji {
+    font-size: 3rem; /* Larger emoji size */
+    margin-top: 20px;
+    text-shadow: 0 0 15px #ff00ff;
+    animation: alienPulse 2s infinite;
+}
+
+/* Alien Pulse Animation */
+@keyframes alienPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Magic Fortune Button */
+.magic-btn {
+    background: #330033;
+    border: 2px solid #00ffff;
+    margin-top: 20px;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    padding: 12px 24px; /* Increased padding for better click target */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.magic-btn:hover {
+    background: #ff33cc;
+    color: #000;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #ff33cc;
+}
+
+/* Fortune Output */
+.fortune-output {
+    color: #00ffee;
+    border: 2px dashed #ff99ff;
+    margin: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 1rem; /* Increase readability */
+    font-family: 'VT323', monospace;
+}
+
+/* Starburst Animation */
+.starburst {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: sparkle 2s ease-out forwards;
+}
+
+@keyframes sparkle {
+    0% { opacity: 1; transform: scale(1) translateY(0); }
+    100% { opacity: 0; transform: scale(0) translateY(-100px); }
+}
+
+/* New futuristic neon outline effect */
+.neon-outline {
+    text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc, 0 0 40px #ff00cc;
+    animation: neonPulse 1.5s infinite alternate;
+}
+
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc; }
+    100% { text-shadow: 0 0 20px #ff66cc, 0 0 40px #ff66cc, 0 0 60px #ff66cc; }
+}
